@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public GameManager gameManager;
     public Rigidbody2D rb2d;
     public float maxInitialAngel = 0.67f;
     public float movespeed = 1f;
@@ -16,6 +15,13 @@ public class Ball : MonoBehaviour
     private void Start()
     {
         Initialpush();
+        GameManager.instance.onReset += ResetBall;
+    }
+
+    private void ResetBall()
+    {
+        ResetBallposition();
+        Initialpush();
     }
 
     private void Initialpush()
@@ -26,7 +32,7 @@ public class Ball : MonoBehaviour
         rb2d.velocity = dir * movespeed;
     }
 
-    private void ResetBall()
+    private void ResetBallposition()
     {
         float posY = Random.Range(-MaxStartY, MaxStartY);
         Vector2 posisition = new Vector2(startX, posY);
@@ -38,9 +44,7 @@ public class Ball : MonoBehaviour
         ScoreZone scoreZone = collision.GetComponent<ScoreZone>();
         if(scoreZone)
         {
-            gameManager.OnScoreZoneReached(scoreZone.id);
-            ResetBall();
-            Initialpush();
+            GameManager.instance.OnScoreZoneReached(scoreZone.id);
         }   
     }
 
