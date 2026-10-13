@@ -416,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056631759943462559, guid: 64bef586ebd63f84199233d69e2f0af8, type: 3}
       propertyPath: m_Name
-      value: SouthSquare
+      value: SouthWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64bef586ebd63f84199233d69e2f0af8, type: 3}
@@ -561,7 +561,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 7558f431b8f066c469915f1cea28d665, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &842362614
 BoxCollider2D:
@@ -657,6 +657,7 @@ MonoBehaviour:
   maxInitialAngel: 0.67
   movespeed: 8
   MaxStartY: 4
+  speedMultiplier: 1.1
 --- !u!114 &887417745 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3070514090649314067, guid: 7a5f7ba8cee21b44e8aff4afd68d5b99, type: 3}
@@ -1202,7 +1203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056631759943462559, guid: 64bef586ebd63f84199233d69e2f0af8, type: 3}
       propertyPath: m_Name
-      value: NorthSquare
+      value: NorthWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64bef586ebd63f84199233d69e2f0af8, type: 3}
